@@ -28,6 +28,7 @@ export class BuyComponent implements OnInit {
   buy(id) {
     console.log(this.selectedValue);
     this.Api.createNewPayment(id).subscribe(data => {
+      this.payments.push(data);
       console.log("POST Request is successful ", data);
     });
   }

@@ -39,7 +39,7 @@ export class ApiService {
 
   // HttpClient API post() method 
   createNewPayment(id): Observable<Payment> {
-    return this.http.post<Payment>(this.apiURL + '/payments', console.log(id), this.httpOptions)
+    return this.http.post<Payment>(this.apiURL + '/payments', id, this.httpOptions)
       .pipe(
         retry(1),
         catchError(this.handleError)
