@@ -9,6 +9,7 @@ import { ApiService } from '../api.service';
 export class AccountComponent implements OnInit {
 
   Balance: any = [];
+  todayDate = new Date();
 
   constructor(public Api: ApiService) { }
 

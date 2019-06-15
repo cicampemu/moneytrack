@@ -15,7 +15,7 @@ export class PaymentsComponent implements OnInit {
   ngOnInit() {
     this.getPayments()
   }
-  // Get employees list
+  // Get payments list
   getPayments() {
     return this.Api.getAllPayments().subscribe((data: {}) => {
       this.Payment = data;

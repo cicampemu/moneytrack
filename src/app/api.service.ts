@@ -46,6 +46,15 @@ export class ApiService {
       );
   }
 
+   // HttpClient API get() method 
+   getAllArticles(): Observable<Article> {
+    return this.http.get<Article>(this.apiURL + '/articles', this.httpOptions)
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      );
+  }
+
   // HttpClient API post() method 
   createNewPayment(payment): Observable<Payment> {
     return this.http.post<Payment>(this.apiURL + '/payments', JSON.stringify(payment), this.httpOptions)

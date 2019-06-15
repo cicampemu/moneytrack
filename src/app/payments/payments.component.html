@@ -17,7 +17,7 @@
             <tbody>
               <tr *ngFor="let payment of Payment">
                 <td>{{payment.article_id}}</td>
-                <td>{{payment.payment_date}}</td>
+                <td>{{payment.payment_date | date:'fullDate'}}</td>
                 <td>{{payment.state}}</td>
               </tr>
             </tbody>
