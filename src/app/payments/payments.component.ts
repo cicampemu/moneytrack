@@ -13,7 +13,7 @@ export class PaymentsComponent implements OnInit {
   constructor(public Api: ApiService) { }
 
   ngOnInit() {
-    this.getPayments()
+    this.getPayments();
   }
   // Get payments list
   getPayments() {

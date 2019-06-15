@@ -11,6 +11,7 @@ export class BuyComponent implements OnInit {
 
   articles: any = [];
   selectedValue: Article;
+  payments: any = [];
 
   constructor(public Api: ApiService) { }
 
