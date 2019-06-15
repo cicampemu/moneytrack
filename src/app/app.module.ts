@@ -6,7 +6,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppComponent } from './app.component';
 
 import { AppRoutingModule } from './app-routing.module';
-
+import { HttpClientModule } from '@angular/common/http';
 import { PaymentsComponent } from './payments/payments.component';
 import { AccountComponent } from './account/account.component';
 import { BuyComponent } from './buy/buy.component';
@@ -20,6 +20,7 @@ import { BuyComponent } from './buy/buy.component';
     BuyComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     BrowserAnimationsModule,
     MatCardModule,

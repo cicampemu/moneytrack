@@ -1,3 +1,15 @@
-<p>
-  account works!
-</p>
+<mat-card class="example-card">
+  <mat-card-header fxLayout="row" fxLayoutAlign="space-around center">
+    
+    <mat-card-title fxLayout="row" fxLayoutAlign="space-around center">Mon compte</mat-card-title>
+    
+    <mat-card-subtitle fxLayout="row" fxLayoutAlign="space-around center">Ma balance au 15/06/2019</mat-card-subtitle>
+  </mat-card-header>
+  
+  <mat-card-content fxLayout="row" fxLayoutAlign="space-around center">
+    <p>
+      {{Balance.balance}}
+    </p>
+  </mat-card-content>
+
+</mat-card>

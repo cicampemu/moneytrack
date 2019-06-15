@@ -1,3 +1,30 @@
-<p>
-  payments works!
-</p>
+<mat-card class="example-card">
+  
+
+  <mat-card-content>
+    <div class="container custom-container-2" fxLayout="row" fxLayoutAlign="space-around center"> 
+      <div *ngIf="Payment.length !== 0">
+        <h3 class="mb-3 text-center" fxLayout="row" fxLayoutAlign="space-around center">Mes paiements</h3>
+        <div class="col-md-12">
+          <table class="table table-bordered" >
+            <thead>
+              <tr>
+                <th scope="col">Article ID</th>
+                <th scope="col">Date</th>
+                <th scope="col">Etat</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let payment of Payment">
+                <td>{{payment.article_id}}</td>
+                <td>{{payment.payment_date}}</td>
+                <td>{{payment.state}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+
+</mat-card>
