@@ -3,7 +3,7 @@
 
   <mat-card-content>
     <div class="container custom-container-2" fxLayout="row" fxLayoutAlign="space-around center"> 
-      <div *ngIf="Payment.length !== 0">
+      <div *ngIf="payments.length !== 0">
         <h3 class="mb-3 text-center" fxLayout="row" fxLayoutAlign="space-around center">Mes paiements</h3>
         <div class="col-md-12">
           <table class="table table-bordered" >
@@ -15,7 +15,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let payment of Payment">
+              <tr *ngFor="let payment of payments">
                 <td>{{payment.article_id}}</td>
                 <td>{{payment.payment_date | date:'fullDate'}}</td>
                 <td>{{payment.state}}</td>

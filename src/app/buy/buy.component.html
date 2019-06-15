@@ -11,15 +11,15 @@
     <mat-form-field>
       <mat-label>Choisir un article</mat-label>
       <mat-select [(ngModel)]="selectedValue" name="article">
-        <mat-option *ngFor="let article of Article" [value]="article.price">
+        <mat-option *ngFor="let article of articles" [value]="article">
           {{article.label}}
         </mat-option>
       </mat-select>
     </mat-form-field>
 
   </mat-card-content>
-  <p fxLayout="row" fxLayoutAlign="center center">Montant: {{selectedValue}}</p>
+  <p fxLayout="row" fxLayoutAlign="center center" *ngIf="selectedValue">Montant: {{selectedValue.price}}</p>
   <mat-card-actions fxLayout="row" fxLayoutAlign="space-around center">
-    <button mat-button color="primary">Acheter</button>
+    <button mat-button color="primary" (click)="buy(selectedValue.id)">Acheter</button>
   </mat-card-actions>
 </mat-card>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
+import { Article } from '../article';
 
 @Component({
   selector: 'app-buy',
@@ -8,8 +9,8 @@ import { ApiService } from '../api.service';
 })
 export class BuyComponent implements OnInit {
 
-  Article: any = [];
-  selectedValue: string;
+  articles: any = [];
+  selectedValue: Article;
 
   constructor(public Api: ApiService) { }
 
@@ -19,7 +20,14 @@ export class BuyComponent implements OnInit {
   // Get payments list
   getArticles() {
     return this.Api.getAllArticles().subscribe((data: {}) => {
-      this.Article = data;
+      this.articles = data;
+    });
+  }
+
+  buy(id) {
+    console.log(this.selectedValue);
+    this.Api.createNewPayment(id).subscribe(data => {
+      console.log("POST Request is successful ", data);
     });
   }
 

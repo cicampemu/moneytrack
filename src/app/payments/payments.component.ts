@@ -8,7 +8,7 @@ import { ApiService } from "../api.service";
 })
 export class PaymentsComponent implements OnInit {
 
-  Payment: any = [];
+  payments: any = [];
 
   constructor(public Api: ApiService) { }
 
@@ -18,7 +18,7 @@ export class PaymentsComponent implements OnInit {
   // Get payments list
   getPayments() {
     return this.Api.getAllPayments().subscribe((data: {}) => {
-      this.Payment = data;
+      this.payments = data;
     });
   }
 
